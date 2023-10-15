@@ -7,12 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="nav-links">
             <a href="./index.html">Ana Səhifə</a>
             <a href="./generate.html">İcons</a>
-            <a href="#"><i class="fa-solid fa-search    "></i></a>
+            <a href="#"><i class="fa-solid fa-search"></i></a>
             <a href="#">Doolmas</a>
-            <div class="nav-btns">
-                <a href="#">Sign-up</a>
-                <a href="#">Sign in <i class="fa-solid fa-right-to-bracket fa-shake"></i></a>
-            </div>
+            <a class="sign" href="#">Sign-up</a>
+            <a class="sign-in" href="#">Sign in <i class="fa-solid fa-right-to-bracket fa-shake"></i></a>
+            <div id="google_translate_element"></div>
         </div>
         </div > `;
 
