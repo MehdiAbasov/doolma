@@ -22,35 +22,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 })
 
-let isimler = {};
+let names = {};
 
 function kontrolEt(input) {
-    let fotoIsmi = input.value;
+    let photoName = input.value;
 
-    if (fotoIsmi === "") {
-        // Eğer input değeri boşsa, işlem yapma
+    if (photoName === "") {
         return;
     }
 
     // İsimler dizisini dolaşarak aynı ismi ara
-    let tekrarSayilari = Object.values(isimler).filter(value => value === fotoIsmi).length;
+    let repeatingNumbers = Object.values(names).filter(value => value === photoName).length;
 
-    if (tekrarSayilari > 0) {
-        let numara = tekrarSayilari;
-        input.value = `${fotoIsmi}-${numara}`;
+    if (repeatingNumbers > 0) {
+        let number = repeatingNumbers;
+        input.value = `${photoName}-${number}`;
     }
 
     // İsmi isimler dizisine ekle
-    isimler[input.getAttribute('data-index')] = fotoIsmi;
+    names[input.getAttribute('data-index')] = photoName;
 }
 
-let inputlar = document.querySelectorAll('.fotoIsmiInput');
-inputlar.forEach(function (input) {
-    let timeout;
+let inputs = document.querySelectorAll('.photoNameInput');
+inputs.forEach(function (input) {
     input.addEventListener('input', function () {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => {
-            kontrolEt(this);
-        }, 1000); // 1000 milisaniye (1 saniye) gecikme
+        kontrolEt(this);
     });
 });
