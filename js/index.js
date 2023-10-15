@@ -22,21 +22,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 })
 
-function adlariNumarala(adlar) {
-    const sayi = {};
-    const neticeler = [];
+let isimler = {};
 
-    for (let i = 0; i < adlar.length; i++) {
-        const ad = adlar[i];
-        if (sayi[ad] === undefined) {
-            sayi[ad] = 0;
-            neticeler.push(ad)
-        } else {
-            sayi[ad]++;
-            neticeler.push(`${ad} (${sayi[ad]})`);
-        }
+function kontrolEt(input) {
+    let fotoIsmi = input.value;
+
+    if (fotoIsmi === "") {
+        // Eğer input değeri boşsa, işlem yapma
+        return;
     }
 
-    return neticeler;
+    // İsimler dizisini dolaşarak aynı ismi ara
+    let tekrarSayilari = Object.values(isimler).filter(value => value === fotoIsmi).length;
+
+    if (tekrarSayilari > 0) {
+        let numara = tekrarSayilari;
+        input.value = `${fotoIsmi}-${numara}`;
+    }
+
+    // İsmi isimler dizisine ekle
+    isimler[input.getAttribute('data-index')] = fotoIsmi;
 }
 
+let inputlar = document.querySelectorAll('.fotoIsmiInput');
+inputlar.forEach(function (input) {
+    let timeout;
+    input.addEventListener('input', function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            kontrolEt(this);
+        }, 1000); // 1000 milisaniye (1 saniye) gecikme
+    });
+});
