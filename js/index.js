@@ -31,7 +31,6 @@ function kontrolEt(input) {
         return;
     }
 
-    // İsimler dizisini dolaşarak aynı ismi ara
     let repeatingNumbers = Object.values(names).filter(value => value === photoName).length;
 
     if (repeatingNumbers > 0) {
@@ -39,7 +38,6 @@ function kontrolEt(input) {
         input.value = `${photoName}-${number}`;
     }
 
-    // İsmi isimler dizisine ekle
     names[input.getAttribute('data-index')] = photoName;
 }
 
