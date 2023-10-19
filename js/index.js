@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
             <a class="sign-in" href="#">Sign in <i class="fa-solid fa-right-to-bracket fa-shake"></i></a>
             <div id="google_translate_element"></div>
         </div>
+        <div class="menu-icon">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div > `;
 
     const navbarContainer = document.getElementById("my-navbar");
