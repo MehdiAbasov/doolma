@@ -7262,7 +7262,7 @@ body {
 
 .ayh {
     --doolma-text-opacity: 1;
-    color: rgb(79 70 229 / var(--doolma-text-opacity));
+    color: rgb(0 170 0 / var(--doolma-text-opacity));
 }
 
 .ayi {
