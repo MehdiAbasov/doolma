@@ -9024,7 +9024,7 @@ body {
 
 .blf:hover {
     --doolma-text-opacity: 1;
-    color: rgb(99 102 241 / var(--doolma-text-opacity));
+    color: rgb(43 200 43 / var(--doolma-text-opacity));
 }
 
 .blg:hover {
